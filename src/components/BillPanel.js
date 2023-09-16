@@ -55,7 +55,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                     <label className="form-label" htmlFor="bill-value">Bill value</label>
                     <input
                         className="form-input"
-                        type="text"
+                        type="number"
                         id="bill-value"
                         name="bill-value"
                         min="0"
@@ -67,7 +67,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                     <label className="form-label" htmlFor="your-cont-value">Your part</label>
                     <input
                         className="form-input"
-                        type="text"
+                        type="number"
                         id="your-cont-value"
                         name="your-cont-value"
                         min="0"
