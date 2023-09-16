@@ -30,11 +30,20 @@ function App() {
         setActiveFriend(id === activeFriend ? null : id);
     }
 
+    const handleChangeOwe = function(owe, id) {
+        setFriends((prevFriends) =>
+            prevFriends.map((friend) =>
+                friend.id === id ? { ...friend, owe: friend.owe + owe } : friend
+            )
+        );
+        setActiveFriend(null);
+    }
+
     return (
         <main className="main">
             <FriendsList friends={friends} activeFriend={activeFriend} onChangeActiveFriend={handleChangeActiveFriend}/>
             {activeFriend ? (
-                <BillPanel activeFriend={friends[activeFriend-1]} />
+                <BillPanel activeFriend={friends[activeFriend-1]} onChangeOwe={handleChangeOwe} />
             ) : (
                 <section className="bill-panel--hidden"></section>
             )}

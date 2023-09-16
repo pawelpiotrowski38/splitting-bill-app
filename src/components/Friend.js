@@ -8,7 +8,7 @@ export default function Friend({friend, activeFriend, onChangeActiveFriend}) {
             </div>
             <div className="friend-name">
                 <p>{friend.name}</p>
-                <p>
+                <p className={friend.owe !== 0 && (friend.owe > 0 ? 'friend-owe--green' : 'friend-owe--red')}>
                     {friend.owe === 0 && `You and ${friend.name} are even`}
                     {friend.owe < 0 && `You owe ${friend.name} ${Math.abs(friend.owe)}$`}
                     {friend.owe > 0 && `${friend.name} owes you ${friend.owe}$`}

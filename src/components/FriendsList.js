@@ -17,7 +17,9 @@ export default function FriendsList({friends, activeFriend, onChangeActiveFriend
                 ))}
             </div>
             <div className="friends-list__button">
-                <button className="btn" onClick={handleAddOpen}>Add friend</button>
+                <button className="btn" onClick={handleAddOpen}>
+                    {isAddOpen ? 'Cancel' : 'Add friend'}
+                </button>
             </div>
             {isAddOpen && (
                 <AddFriend />
