@@ -1,0 +1,100 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1rem;
+    width: 750px;
+    max-width: 750px;
+    background-color: rgb(255, 252, 242);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgb(224, 224, 224);
+}
+
+.friends-list {
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(253, 225, 192);
+}
+
+.friends-list > :not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.friends-list__button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.friend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: red;
+    border-radius: 0.5rem;
+}
+
+.friend-name {
+    margin: 0 0.5rem;
+}
+
+.bill-panel {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(253, 225, 192);
+}
+
+.bill-panel-title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form {
+
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.form-label {
+    flex: 2;
+}
+
+.form-label--friend {
+    flex: 0.5;
+}
+
+.form-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-button {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.form-button button {
+    width: 100%;
+}
+
+.add-friend {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(145, 112, 74);
+}
+
+.btn {
+    padding: 0.25rem 0.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}

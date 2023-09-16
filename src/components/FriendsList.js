@@ -1,3 +1,4 @@
+import AddFriend from "./AddFriend";
 import Friend from "./Friend";
 
 const friends = [
@@ -23,6 +24,10 @@ export default function FriendsList() {
                     <Friend />
                 </div>
             ))}
+            <div className="friends-list__button">
+                <button className="btn">Add friend</button>
+            </div>
+            <AddFriend />
         </section>
     )
 }
