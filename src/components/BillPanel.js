@@ -2,9 +2,9 @@ import { useState } from "react";
 
 export default function BillPanel({activeFriend, onChangeBalance}) {
     const [values, setValues] = useState({
-        billValue: 0,
-        yourPartValue: 0,
-        friendPartValue: 0,
+        billValue: "",
+        yourPartValue: "",
+        friendPartValue: "",
         payer: "you",
     })
     const [formError, setFormError] = useState("");
@@ -16,7 +16,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
         setValues((values) => ({
             ...values,
             billValue: Number(event.target.value),
-            friendPartValue: difference >= 0 ? difference : 0
+            friendPartValue: difference >= 0 ? difference : ""
         }))
     }
 
