@@ -1,32 +1,32 @@
 import { useState } from "react";
 
-export default function BillPanel({activeFriend, onChangeOwe}) {
+export default function BillPanel({activeFriend, onChangeBalance}) {
     const [values, setValues] = useState({
         billValue: 0,
-        yourContValue: 0,
-        friendContValue: 0,
+        yourPartValue: 0,
+        friendPartValue: 0,
         payer: "you",
     })
     const [formError, setFormError] = useState("");
 
-    const owe = values.payer === "you" ? values.friendContValue : -values.yourContValue;  
+    const balance = values.payer === "you" ? values.friendPartValue : -values.yourPartValue;  
 
     const changeBillValue = function(event) {
-        const difference = Number(event.target.value) - Number(values.yourContValue);
+        const difference = Number(event.target.value) - Number(values.yourPartValue);
         setValues((values) => ({
             ...values,
             billValue: Number(event.target.value),
-            friendContValue: difference >= 0 ? difference : 0
+            friendPartValue: difference >= 0 ? difference : 0
         }))
     }
 
-    const changeYourContValue = function(event) {
+    const changeyourPartValue = function(event) {
         const difference = Number(values.billValue) - Number(event.target.value);
         if (difference >= 0) {
             setValues((values) => ({
                 ...values,
-                yourContValue: Number(event.target.value),
-                friendContValue: difference
+                yourPartValue: Number(event.target.value),
+                friendPartValue: difference
             }))
         }
     }
@@ -39,8 +39,8 @@ export default function BillPanel({activeFriend, onChangeOwe}) {
 
     const handleSubmit = function(event) {
         event.preventDefault();
-        if (values.yourContValue <= values.billValue && values.billValue > 0) {
-            onChangeOwe(owe, activeFriend.id);
+        if (values.yourPartValue <= values.billValue && values.billValue > 0) {
+            onChangeBalance(balance, activeFriend.id);
             setFormError("");
         } else {
             setFormError("Entered values are not correct!");
@@ -64,7 +64,7 @@ export default function BillPanel({activeFriend, onChangeOwe}) {
                     />
                 </div>
                 <div className="form-item">
-                    <label className="form-label" htmlFor="your-cont-value">Your contribution</label>
+                    <label className="form-label" htmlFor="your-cont-value">Your part</label>
                     <input
                         className="form-input"
                         type="text"
@@ -73,19 +73,19 @@ export default function BillPanel({activeFriend, onChangeOwe}) {
                         min="0"
                         max={`${values.billValue}`}
                         readOnly={values.billValue ? false : true}
-                        value={values.yourContValue}
-                        onChange={changeYourContValue}
+                        value={values.yourPartValue}
+                        onChange={changeyourPartValue}
                     />
                 </div>
                 <div className="form-item">
-                    <label className="form-label" htmlFor="friend-cont-value">Friend's contribution</label>
+                    <label className="form-label" htmlFor="friend-cont-value">Friend's part</label>
                     <input
                         className="form-input"
                         type="text"
                         id="friend-cont-value"
                         name="friend-cont-value"
                         disabled={true}
-                        value={values.friendContValue}
+                        value={values.friendPartValue}
                     />
                 </div>
                 <div className="form-item">

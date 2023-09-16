@@ -1,7 +1,35 @@
-export default function AddFriend() {
+import { useState } from "react";
+
+export default function AddFriend({onFriendAdd, onIsAddOpen}) {
+    const [values, setValues] = useState({
+        name: "",
+        url: "https://i.pravatar.cc/48",
+    })
+    const [formError, setFormError] = useState("");
+
+    const changeName = function(event) {
+        setValues((values) => ({...values, name: event.target.value}))
+    }
+
+    const changeUrl = function(event) {
+        setValues((values) => ({...values, name: event.target.value}))
+    }
 
     const handleSubmit = function(event) {
         event.preventDefault();
+        if (values.name && values.url) {
+            const id = Math.floor(Math.random() * (900000)) + 100000;
+            const newFriend = {
+                id: id,
+                name: values.name,
+                balance: 0,
+                url: `${values.url}?u=${id}`,
+            }
+            onFriendAdd(newFriend);
+            onIsAddOpen((prev) => !prev);
+        } else {
+            setFormError("Entered values are not correct!")
+        }
     }
 
     return (
@@ -9,16 +37,35 @@ export default function AddFriend() {
             <form className="form" onSubmit={handleSubmit}>
                 <div className="form-item">
                     <label className="form-label--friend" htmlFor="name">Name</label>
-                    <input className="form-input" type="text" id="name" name="name"/>
+                    <input
+                        className="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={values.name}
+                        onChange={changeName}
+                    />
                 </div>
                 <div className="form-item">
                     <label className="form-label--friend" htmlFor="avatar-url">Avatar URL</label>
-                    <input className="form-input" type="text" id="avatar-url" name="avatar-url"/>
+                    <input
+                        className="form-input"
+                        type="text"
+                        id="avatar-url"
+                        name="avatar-url"
+                        value={values.url}
+                        onChange={changeUrl}
+                    />
+                </div>
+                {formError && (
+                    <div className="form-error">
+                        {formError}
+                    </div>
+                )}
+                <div className="form-button">
+                    <button className="btn">Add</button>
                 </div>
             </form>
-            <div className="form-button">
-                <button className="btn">Add</button>
-            </div>
         </div>
     )
 }

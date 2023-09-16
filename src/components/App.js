@@ -7,43 +7,47 @@ function App() {
     const [activeFriend, setActiveFriend] = useState(null);
     const [friends, setFriends] = useState([
         {
-            id: 1,
+            id: 678467,
             name: 'John',
-            owe: -5,
-            url: 'https://i.pravatar.cc/5'
+            balance: -5,
+            url: 'https://i.pravatar.cc/48?u=678467'
         },
         {
-            id: 2,
+            id: 857566,
             name: 'Chris',
-            owe: 0,
-            url: 'https://i.pravatar.cc/132'
+            balance: 0,
+            url: 'https://i.pravatar.cc/48?u=857566'
         },
         {
-            id: 3,
+            id: 912833,
             name: 'Jane',
-            owe: 20,
-            url: 'https://i.pravatar.cc/78'
+            balance: 20,
+            url: 'https://i.pravatar.cc/48?u=912833'
         }
     ]);
 
-    const handleChangeActiveFriend = function(id) {
-        setActiveFriend(id === activeFriend ? null : id);
+    const handleChangeActiveFriend = function(friend) {
+        setActiveFriend(friend.id === activeFriend?.id ? null : friend);
     }
 
-    const handleChangeOwe = function(owe, id) {
+    const handleChangeBalance = function(balance, id) {
         setFriends((prevFriends) =>
             prevFriends.map((friend) =>
-                friend.id === id ? { ...friend, owe: friend.owe + owe } : friend
+                friend.id === id ? { ...friend, balance: friend.balance + balance } : friend
             )
         );
         setActiveFriend(null);
     }
 
+    const handleFriendAdd = function(newFriend) {
+        setFriends(prevFriends => [...prevFriends, newFriend]);
+    }
+
     return (
         <main className="main">
-            <FriendsList friends={friends} activeFriend={activeFriend} onChangeActiveFriend={handleChangeActiveFriend}/>
+            <FriendsList friends={friends} activeFriend={activeFriend} onChangeActiveFriend={handleChangeActiveFriend} onFriendAdd={handleFriendAdd}/>
             {activeFriend ? (
-                <BillPanel activeFriend={friends[activeFriend-1]} onChangeOwe={handleChangeOwe} />
+                <BillPanel activeFriend={activeFriend} onChangeBalance={handleChangeBalance} />
             ) : (
                 <section className="bill-panel--hidden"></section>
             )}

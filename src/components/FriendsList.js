@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddFriend from "./AddFriend";
 import Friend from "./Friend";
 
-export default function FriendsList({friends, activeFriend, onChangeActiveFriend}) {
+export default function FriendsList({friends, activeFriend, onChangeActiveFriend, onFriendAdd}) {
     const [isAddOpen, setIsAddOpen] = useState(false);
 
     const handleAddOpen = function() {
@@ -22,7 +22,7 @@ export default function FriendsList({friends, activeFriend, onChangeActiveFriend
                 </button>
             </div>
             {isAddOpen && (
-                <AddFriend />
+                <AddFriend onFriendAdd={onFriendAdd} onIsAddOpen={setIsAddOpen}/>
             )}
         </section>
     )
