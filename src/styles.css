@@ -11,39 +11,77 @@
 }
 
 .friends-list {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(253, 225, 192);
+    background-color: rgb(255, 232, 205);
 }
 
-.friends-list > :not(:last-child) {
-    margin-bottom: 0.5rem;
+.friends-list__list > :not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.friends-list__list > :last-child {
+    margin-bottom: 1.5rem;
 }
 
 .friends-list__button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .friend {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0.5rem;
-    background-color: red;
     border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.friend:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+.friend--active {
+    background-color: rgb(224, 224, 224);
+}
+
+.friend-avatar {
+    flex: 0 0 45px;
+    margin-right: 1rem;
+}
+
+.friend-avatar-image {
+    border-radius: 50%;
+    background-color: black;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+}
+
+.friend-avatar img {
+    min-width: 45px;
+    max-width: 45px;
+    max-height: 45px;
+    display: block;
 }
 
 .friend-name {
-    margin: 0 0.5rem;
+    flex: 1;
+    margin-right: 1rem;
 }
 
 .bill-panel {
+    flex: 1;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(253, 225, 192);
+    background-color: rgb(255, 232, 205);
+}
+
+.bill-panel--hidden {
+    flex: 1;
 }
 
 .bill-panel-title {
@@ -86,15 +124,21 @@
 .add-friend {
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(145, 112, 74);
+    background-color: rgb(253, 206, 152);
 }
 
 .btn {
+    min-width: 4rem;
     padding: 0.25rem 0.5rem;
     outline: none;
     border: none;
     border-radius: 0.5rem;
-    background-color: blue;
+    background-color: rgb(64, 64, 255);
     color: white;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgb(94, 94, 255);
 }

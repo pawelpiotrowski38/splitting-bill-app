@@ -1,12 +1,27 @@
-export default function Friend() {
+export default function Friend({friend, activeFriend, onChangeActiveFriend}) {
     return (
-        <div className="friend">
-            <img src="#" alt="friend avatar" />
-            <div className="friend-name">
-                <p>Jack</p>
-                <p>You and Jack are even</p>
+        <div className={`friend ${friend.id === activeFriend ? 'friend--active' : ''}`}>
+            <div className="friend-avatar">
+                <div className="friend-avatar-image">
+                    <img src={friend.url} alt="friend avatar" />
+                </div>
             </div>
-            <button className="btn">Select</button>
+            <div className="friend-name">
+                <p>{friend.name}</p>
+                <p>
+                    {friend.owe === 0 && `You and ${friend.name} are even`}
+                    {friend.owe < 0 && `You owe ${friend.name} ${Math.abs(friend.owe)}$`}
+                    {friend.owe > 0 && `${friend.name} owes you ${friend.owe}$`}
+                </p>
+            </div>
+            <div className="friend-button">
+                <button
+                    className="btn"
+                    onClick={() => onChangeActiveFriend(friend.id)}
+                >
+                    {friend.id === activeFriend ? 'Close' : 'Select'}
+                </button>
+            </div>
         </div>
     )
 }

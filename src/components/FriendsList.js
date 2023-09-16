@@ -1,33 +1,27 @@
+import { useState } from "react";
 import AddFriend from "./AddFriend";
 import Friend from "./Friend";
 
-const friends = [
-    {
-        id: 1,
-        name: 'John',
-    },
-    {
-        id: 2,
-        name: 'Chris',
-    },
-    {
-        id: 3,
-        name: 'Jane',
-    }
-];
+export default function FriendsList({friends, activeFriend, onChangeActiveFriend}) {
+    const [isAddOpen, setIsAddOpen] = useState(false);
 
-export default function FriendsList() {
+    const handleAddOpen = function() {
+        setIsAddOpen((isAddOpen) => !isAddOpen);
+    }
+
     return (
         <section className="friends-list">
-            {friends.map(friend => (
-                <div key={friend.id}>
-                    <Friend />
-                </div>
-            ))}
-            <div className="friends-list__button">
-                <button className="btn">Add friend</button>
+            <div className="friends-list__list">
+                {friends.map(friend => (
+                    <Friend key={friend.id} friend={friend} activeFriend={activeFriend} onChangeActiveFriend={onChangeActiveFriend}/>
+                ))}
             </div>
-            <AddFriend />
+            <div className="friends-list__button">
+                <button className="btn" onClick={handleAddOpen}>Add friend</button>
+            </div>
+            {isAddOpen && (
+                <AddFriend />
+            )}
         </section>
     )
 }

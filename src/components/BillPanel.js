@@ -1,12 +1,12 @@
-export default function BillPanel() {
+export default function BillPanel({activeFriend}) {
 
     const handleSubmit = function(event) {
         event.preventDefault();
     }
 
     return (
-        <div className="bill-panel">
-            <h2 className="bill-panel-title">Split the bill with name</h2>
+        <section className="bill-panel">
+            <h2 className="bill-panel-title">Split the bill with {activeFriend.name}</h2>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="form-item">
                     <label className="form-label" htmlFor="bill-value">Bill value</label>
@@ -31,6 +31,6 @@ export default function BillPanel() {
             <div className="form-button">
                 <button className="btn">Split</button>
             </div>
-        </div>
+        </section>
     )
 }
