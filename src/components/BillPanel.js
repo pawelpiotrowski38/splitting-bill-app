@@ -11,7 +11,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
 
     const balance = values.payer === "you" ? values.friendPartValue : -values.yourPartValue;  
 
-    const changeBillValue = function(event) {
+    const handleChangeBillValue = function(event) {
         const difference = Number(event.target.value) - Number(values.yourPartValue);
         setValues((values) => ({
             ...values,
@@ -20,7 +20,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
         }))
     }
 
-    const changeyourPartValue = function(event) {
+    const handleChangeYourPartValue = function(event) {
         const difference = Number(values.billValue) - Number(event.target.value);
         if (difference >= 0) {
             setValues((values) => ({
@@ -31,7 +31,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
         }
     }
 
-    const changePayer = function(event) {
+    const handleChangePayer = function(event) {
         setValues((values) => (
             {...values, payer: event.target.value}
         ))
@@ -60,7 +60,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         name="bill-value"
                         min="0"
                         value={values.billValue}
-                        onChange={changeBillValue}
+                        onChange={handleChangeBillValue}
                     />
                 </div>
                 <div className="form-item">
@@ -71,10 +71,9 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         id="your-cont-value"
                         name="your-cont-value"
                         min="0"
-                        max={`${values.billValue}`}
                         readOnly={values.billValue ? false : true}
                         value={values.yourPartValue}
-                        onChange={changeyourPartValue}
+                        onChange={handleChangeYourPartValue}
                     />
                 </div>
                 <div className="form-item">
@@ -95,7 +94,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         id="payer"
                         name="payer"
                         value={values.payer}
-                        onChange={changePayer}
+                        onChange={handleChangePayer}
                     >
                         <option value={'you'}>You</option>
                         <option value={'friend'}>Friend</option>

@@ -7,11 +7,11 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
     })
     const [formError, setFormError] = useState("");
 
-    const changeName = function(event) {
+    const handleChangeName = function(event) {
         setValues((values) => ({...values, name: event.target.value}))
     }
 
-    const changeUrl = function(event) {
+    const handleChangeUrl = function(event) {
         setValues((values) => ({...values, name: event.target.value}))
     }
 
@@ -43,7 +43,7 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
                         id="name"
                         name="name"
                         value={values.name}
-                        onChange={changeName}
+                        onChange={handleChangeName}
                     />
                 </div>
                 <div className="form-item">
@@ -54,7 +54,7 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
                         id="avatar-url"
                         name="avatar-url"
                         value={values.url}
-                        onChange={changeUrl}
+                        onChange={handleChangeUrl}
                     />
                 </div>
                 {formError && (
