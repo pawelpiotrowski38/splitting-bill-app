@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: flex-start;
     padding: 1rem;
-    margin: 0 0.25rem;
+    margin: 0.25rem 0.25rem;
     max-width: 450px;
     border-radius: 0.5rem;
 }
