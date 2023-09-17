@@ -11,17 +11,17 @@ export default function Friend({friend, activeFriend, onChangeActiveFriend, onFr
             <div className="friend-name">
                 <p>{friend.name}</p>
                 {friend.balance === 0 && (
-                    <p>
+                    <p className="friend-balance">
                         {`You and ${friend.name} are even`}
                     </p>
                 )}
                 {friend.balance > 0 && (
-                    <p className="friend-balance--green">
+                    <p className="friend-balance friend-balance--green">
                         {`${friend.name} owes you ${friend.balance}$`}
                     </p>
                 )}
                 {friend.balance < 0 && (
-                    <p className="friend-balance--red">
+                    <p className="friend-balance friend-balance--red">
                         {`You owe ${friend.name} ${Math.abs(friend.balance)}$`}
                     </p>
                 )}
