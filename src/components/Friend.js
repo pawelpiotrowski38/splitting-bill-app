@@ -8,8 +8,8 @@ export default function Friend({friend, activeFriend, onChangeActiveFriend, onFr
                     <img src={friend.url} alt="friend" />
                 </div>
             </div>
-            <div className="friend-name">
-                <p>{friend.name}</p>
+            <div className="friend-info">
+                <p className="friend-name">{friend.name}</p>
                 {friend.balance === 0 && (
                     <p className="friend-balance">
                         {`You and ${friend.name} are even`}

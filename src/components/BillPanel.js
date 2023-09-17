@@ -59,6 +59,7 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         id="bill-value"
                         name="bill-value"
                         min="0"
+                        autoFocus={true}
                         value={values.billValue}
                         onChange={handleChangeBillValue}
                     />

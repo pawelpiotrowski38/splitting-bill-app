@@ -42,6 +42,7 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
                         type="text"
                         id="name"
                         name="name"
+                        autoFocus={true}
                         value={values.name}
                         onChange={handleChangeName}
                     />
