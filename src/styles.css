@@ -3,18 +3,16 @@
     justify-content: space-around;
     align-items: flex-start;
     padding: 1rem;
-    width: 750px;
-    max-width: 750px;
-    background-color: rgb(255, 252, 242);
+    width: 800px;
+    max-width: 800px;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem rgb(224, 224, 224);
 }
 
 .friends-list {
     margin-right: 0.5rem;
     padding: 0.75rem;
     border-radius: 0.5rem;
-    background-color: rgb(255, 232, 205);
+    background-color: var(--panel-color);
 }
 
 .friends-list__list > :not(:last-child) {
@@ -42,11 +40,11 @@
 }
 
 .friend:hover {
-    background-color: rgb(224, 224, 224);
+    background-color: var(--friend-color--hover);
 }
 
 .friend--active {
-    background-color: rgb(224, 224, 224);
+    background-color: var(--friend-color--hover);
 }
 
 .friend-avatar {
@@ -56,7 +54,6 @@
 
 .friend-avatar-image {
     border-radius: 50%;
-    background-color: black;
     overflow: hidden;
     transition: all 0.2s ease-out;
 }
@@ -89,6 +86,7 @@
 }
 
 .friend-remove-icon {
+    margin-left: 0.25rem;
     color: red;
     font-size: 1.75rem;
     cursor: pointer;
@@ -103,7 +101,7 @@
     flex: 1;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(255, 232, 205);
+    background-color: var(--panel-color);
 }
 
 .bill-panel--hidden {
@@ -123,6 +121,7 @@
 
 .form-label {
     flex: 2;
+    color: var(--secondary-text-color);
 }
 
 .form-label--friend {
@@ -132,6 +131,11 @@
 .form-input {
     flex: 1;
     min-width: 0;
+    outline: none;
+    border: 0.125rem solid var(--background-color);
+    border-radius: 0.25rem;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
 }
 
 .form-button {
@@ -151,7 +155,7 @@
 .add-friend {
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: rgb(253, 206, 152);
+    background-color: var(---panel-color);
 }
 
 .btn {
@@ -160,12 +164,12 @@
     outline: none;
     border: none;
     border-radius: 0.5rem;
-    background-color: rgb(64, 64, 255);
-    color: white;
+    background-color: var(--button-background-color);
+    color: var(--primary-text-color);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
-    background-color: rgb(94, 94, 255);
+    background-color: var(--button-background-color--hover);
 }
