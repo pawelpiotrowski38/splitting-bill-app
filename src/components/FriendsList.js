@@ -11,7 +11,7 @@ export default function FriendsList({friends, activeFriend, onChangeActiveFriend
 
     return (
         <section className="friends-list">
-            <div className="friends-list__list">
+            <ul className="friends-list__list">
                 {friends.map(friend => (
                     <Friend
                         key={friend.id}
@@ -21,7 +21,7 @@ export default function FriendsList({friends, activeFriend, onChangeActiveFriend
                         onFriendRemove={onFriendRemove}
                     />
                 ))}
-            </div>
+            </ul>
             <div className="friends-list__button">
                 <button className="btn" onClick={handleAddOpen}>
                     {isAddOpen ? 'Cancel' : 'Add friend'}
