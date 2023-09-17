@@ -35,10 +35,10 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
     return (
         <div className="add-friend">
             <form className="form" onSubmit={handleSubmit}>
-                <div className="form-item">
-                    <label className="form-label--friend" htmlFor="name">Name</label>
+                <div className="form__item">
+                    <label className="form__label--friend" htmlFor="name">Name</label>
                     <input
-                        className="form-input"
+                        className="form__input"
                         type="text"
                         id="name"
                         name="name"
@@ -47,10 +47,10 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
                         onChange={handleChangeName}
                     />
                 </div>
-                <div className="form-item">
-                    <label className="form-label--friend" htmlFor="avatar-url">Avatar URL</label>
+                <div className="form__item">
+                    <label className="form__label--friend" htmlFor="avatar-url">Avatar URL</label>
                     <input
-                        className="form-input"
+                        className="form__input"
                         type="text"
                         id="avatar-url"
                         name="avatar-url"
@@ -59,11 +59,11 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
                     />
                 </div>
                 {formError && (
-                    <div className="form-error">
+                    <div className="form__error">
                         {formError}
                     </div>
                 )}
-                <div className="form-button">
+                <div className="form__buttons">
                     <button className="btn">Add</button>
                 </div>
             </form>

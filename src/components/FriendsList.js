@@ -12,15 +12,19 @@ export default function FriendsList({friends, activeFriend, onChangeActiveFriend
     return (
         <section className="friends-list">
             <ul className="friends-list__list">
-                {friends.map(friend => (
-                    <Friend
-                        key={friend.id}
-                        friend={friend}
-                        activeFriend={activeFriend}
-                        onChangeActiveFriend={onChangeActiveFriend}
-                        onFriendRemove={onFriendRemove}
-                    />
-                ))}
+                {friends.length ? (
+                    friends.map(friend => (
+                        <Friend
+                            key={friend.id}
+                            friend={friend}
+                            activeFriend={activeFriend}
+                            onChangeActiveFriend={onChangeActiveFriend}
+                            onFriendRemove={onFriendRemove}
+                        />
+                    ))
+                ) : (
+                    <p className="friends-list__empty">You don't have any friends on the list</p>
+                )}
             </ul>
             <div className="friends-list__button">
                 <button className="btn" onClick={handleAddOpen}>

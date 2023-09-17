@@ -38,6 +38,10 @@
     padding: 0.5rem;
 }
 
+.friends-list__empty {
+    padding: 0.25rem 0.5rem;
+}
+
 .friend {
     display: flex;
     justify-content: flex-start;
@@ -56,53 +60,52 @@
     background-color: var(--friend-color--hover);
 }
 
-.friend-avatar {
+.friend__avatar {
     flex: 0 0 48px;
     margin-right: 1rem;
 }
 
-.friend-avatar-image {
+.friend__avatar-image {
     border-radius: 50%;
     overflow: hidden;
     transition: all 0.2s ease-out;
 }
 
-.friend-avatar img {
+.friend__avatar img {
     min-width: 48px;
     max-width: 48px;
     max-height: 48px;
     display: block;
 }
 
-.friend-info {
+.friend__info {
     flex: 1;
-    /* min-width: 12rem; */
     margin-right: 1rem;
 }
 
-.friend-name {
+.friend__name {
     font-weight: bold;
 }
 
-.friend-balance {
+.friend__balance {
     color: var(--secondary-text-color);
 }
 
-.friend-balance--red {
+.friend__balance--red {
     color: var(--negative-balance-color);
 }
 
-.friend-balance--green {
+.friend__balance--green {
     color: var(--positive-balance-color);
 }
 
-.friend-buttons {
+.friend__buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.friend-remove-icon {
+.friend__remove-icon {
     margin-left: 0.25rem;
     color: var(--negative-balance-color);
     font-size: 1.75rem;
@@ -110,7 +113,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.friend-remove-icon:hover {
+.friend__remove-icon:hover {
     scale: 1.1;
 }
 
@@ -126,7 +129,7 @@
     flex: 1;
 }
 
-.bill-panel-title {
+.bill-panel__title {
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -135,22 +138,22 @@
     font-size: 1.125rem;
 }
 
-.form-item {
+.form__item {
     display: flex;
     align-items: center;
     margin-bottom: 0.75rem;
 }
 
-.form-label {
+.form__label {
     flex: 2;
     color: var(--secondary-text-color);
 }
 
-.form-label--friend {
+.form__label--friend {
     flex: 0.5;
 }
 
-.form-input {
+.form__input {
     flex: 1;
     min-width: 0;
     outline: none;
@@ -161,20 +164,20 @@
     font-size: 1rem;
 }
 
-.form-input:focus {
+.form__input:focus {
     border-color: var(--button-background-color);
 }
 
-.form-button {
+.form__buttons {
     width: 100%;
     margin-top: 1rem;
 }
 
-.form-button button {
+.form__buttons button {
     width: 100%;
 }
 
-.form-error {
+.form__error {
     text-align: center;
     color: var(--negative-balance-color);
 }

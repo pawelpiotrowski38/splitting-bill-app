@@ -49,12 +49,12 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
 
     return (
         <section className="bill-panel">
-            <h2 className="bill-panel-title">Split the bill with {activeFriend.name}</h2>
+            <h2 className="bill-panel__title">Split the bill with {activeFriend.name}</h2>
             <form className="form" onSubmit={handleSubmit}>
-                <div className="form-item">
-                    <label className="form-label" htmlFor="bill-value">Bill value</label>
+                <div className="form__item">
+                    <label className="form__label" htmlFor="bill-value">Bill value</label>
                     <input
-                        className="form-input"
+                        className="form__input"
                         type="number"
                         id="bill-value"
                         name="bill-value"
@@ -64,10 +64,10 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         onChange={handleChangeBillValue}
                     />
                 </div>
-                <div className="form-item">
-                    <label className="form-label" htmlFor="your-cont-value">Your part</label>
+                <div className="form__item">
+                    <label className="form__label" htmlFor="your-cont-value">Your part</label>
                     <input
-                        className="form-input"
+                        className="form__input"
                         type="number"
                         id="your-cont-value"
                         name="your-cont-value"
@@ -77,10 +77,10 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         onChange={handleChangeYourPartValue}
                     />
                 </div>
-                <div className="form-item">
-                    <label className="form-label" htmlFor="friend-cont-value">Friend's part</label>
+                <div className="form__item">
+                    <label className="form__label" htmlFor="friend-cont-value">Friend's part</label>
                     <input
-                        className="form-input"
+                        className="form__input"
                         type="text"
                         id="friend-cont-value"
                         name="friend-cont-value"
@@ -88,10 +88,10 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                         value={values.friendPartValue}
                     />
                 </div>
-                <div className="form-item">
-                    <label className="form-label" htmlFor="payer">Who's paying</label>
+                <div className="form__item">
+                    <label className="form__label" htmlFor="payer">Who's paying</label>
                     <select
-                        className="form-input"
+                        className="form__input"
                         id="payer"
                         name="payer"
                         value={values.payer}
@@ -102,11 +102,11 @@ export default function BillPanel({activeFriend, onChangeBalance}) {
                     </select>
                 </div>
                 {formError && (
-                    <div className="form-error">
+                    <div className="form__error">
                         {formError}
                     </div>
                 )}
-                <div className="form-button">
+                <div className="form__buttons">
                     <button className="btn">Split</button>
                 </div>
             </form>
