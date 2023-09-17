@@ -43,9 +43,24 @@ function App() {
         setFriends(prevFriends => [...prevFriends, newFriend]);
     }
 
+    const handleFriendRemove = function(id) {
+        setFriends((prevFriends) =>
+            prevFriends.filter((friend) => friend.id !== id)
+        );
+        if (activeFriend && id === activeFriend.id) {
+            setActiveFriend(null);
+        }
+    }
+
     return (
         <main className="main">
-            <FriendsList friends={friends} activeFriend={activeFriend} onChangeActiveFriend={handleChangeActiveFriend} onFriendAdd={handleFriendAdd}/>
+            <FriendsList
+                friends={friends}
+                activeFriend={activeFriend}
+                onChangeActiveFriend={handleChangeActiveFriend}
+                onFriendAdd={handleFriendAdd}
+                onFriendRemove={handleFriendRemove}
+            />
             {activeFriend ? (
                 <BillPanel activeFriend={activeFriend} onChangeBalance={handleChangeBalance} />
             ) : (

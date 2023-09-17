@@ -1,4 +1,6 @@
-export default function Friend({friend, activeFriend, onChangeActiveFriend}) {
+import { TiDelete } from "react-icons/ti";
+
+export default function Friend({friend, activeFriend, onChangeActiveFriend, onFriendRemove}) {
     return (
         <div className={`friend ${friend.id === activeFriend?.id ? 'friend--active' : ''}`}>
             <div className="friend-avatar">
@@ -24,13 +26,14 @@ export default function Friend({friend, activeFriend, onChangeActiveFriend}) {
                     </p>
                 )}
             </div>
-            <div className="friend-button">
+            <div className="friend-buttons">
                 <button
                     className="btn"
                     onClick={() => onChangeActiveFriend(friend)}
                 >
                     {friend.id === activeFriend?.id ? 'Close' : 'Select'}
                 </button>
+                <TiDelete className='friend-remove-icon' onClick={() => onFriendRemove(friend.id)} />
             </div>
         </div>
     )

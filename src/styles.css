@@ -36,7 +36,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.5rem 0.25rem;
     border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
 }
@@ -80,6 +80,23 @@
 
 .friend-balance--green {
     color: green;
+}
+
+.friend-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.friend-remove-icon {
+    color: red;
+    font-size: 1.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.friend-remove-icon:hover {
+    scale: 1.1;
 }
 
 .bill-panel {

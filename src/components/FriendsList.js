@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddFriend from "./AddFriend";
 import Friend from "./Friend";
 
-export default function FriendsList({friends, activeFriend, onChangeActiveFriend, onFriendAdd}) {
+export default function FriendsList({friends, activeFriend, onChangeActiveFriend, onFriendAdd, onFriendRemove}) {
     const [isAddOpen, setIsAddOpen] = useState(false);
 
     const handleAddOpen = function() {
@@ -13,7 +13,13 @@ export default function FriendsList({friends, activeFriend, onChangeActiveFriend
         <section className="friends-list">
             <div className="friends-list__list">
                 {friends.map(friend => (
-                    <Friend key={friend.id} friend={friend} activeFriend={activeFriend} onChangeActiveFriend={onChangeActiveFriend}/>
+                    <Friend
+                        key={friend.id}
+                        friend={friend}
+                        activeFriend={activeFriend}
+                        onChangeActiveFriend={onChangeActiveFriend}
+                        onFriendRemove={onFriendRemove}
+                    />
                 ))}
             </div>
             <div className="friends-list__button">
