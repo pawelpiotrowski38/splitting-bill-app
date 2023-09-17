@@ -12,7 +12,7 @@ export default function AddFriend({onFriendAdd, onIsAddOpen}) {
     }
 
     const handleChangeUrl = function(event) {
-        setValues((values) => ({...values, name: event.target.value}))
+        setValues((values) => ({...values, url: event.target.value}))
     }
 
     const handleSubmit = function(event) {

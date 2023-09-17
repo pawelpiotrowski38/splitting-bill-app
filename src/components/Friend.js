@@ -5,7 +5,7 @@ export default function Friend({friend, activeFriend, onChangeActiveFriend, onFr
         <div className={`friend ${friend.id === activeFriend?.id ? 'friend--active' : ''}`}>
             <div className="friend-avatar">
                 <div className="friend-avatar-image">
-                    <img src={friend.url} alt="friend avatar" />
+                    <img src={friend.url} alt="friend" />
                 </div>
             </div>
             <div className="friend-name">

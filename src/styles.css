@@ -72,11 +72,11 @@
 }
 
 .friend-balance--red {
-    color: red;
+    color: var(--negative-balance-color);
 }
 
 .friend-balance--green {
-    color: green;
+    color: var(--positive-balance-color);
 }
 
 .friend-buttons {
@@ -87,7 +87,7 @@
 
 .friend-remove-icon {
     margin-left: 0.25rem;
-    color: red;
+    color: var(--negative-balance-color);
     font-size: 1.75rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -149,7 +149,7 @@
 
 .form-error {
     text-align: center;
-    color: red;
+    color: var(--negative-balance-color);
 }
 
 .add-friend {
