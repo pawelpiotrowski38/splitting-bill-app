@@ -89,6 +89,7 @@
 
 .friend__balance {
     color: var(--secondary-text-color);
+    font-size: 1rem;
 }
 
 .friend__balance--red {
@@ -147,10 +148,12 @@
 .form__label {
     flex: 2;
     color: var(--secondary-text-color);
+    font-size: 1rem;
 }
 
 .form__label--friend {
     flex: 0.5;
+    font-size: 1rem;
 }
 
 .form__input {
