@@ -62,7 +62,11 @@ function App() {
                 onFriendRemove={handleFriendRemove}
             />
             {activeFriend ? (
-                <BillPanel activeFriend={activeFriend} onChangeBalance={handleChangeBalance} />
+                <BillPanel
+                    key={activeFriend.id}
+                    activeFriend={activeFriend}
+                    onChangeBalance={handleChangeBalance}
+                />
             ) : (
                 <section className="bill-panel--hidden"></section>
             )}
